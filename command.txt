@@ -1,0 +1,85 @@
+实物：
+sudo ifconfig enp5s0 192.168.56.1 netmask 255.255.255.0                       176393
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.56.101
+以上两行命令在同一个终端
+开电
+然后在run中载入文件
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch limited:=true sim:=false
+roslaunch ur5e_moveit_config moveit_rviz.launch config:=true
+
+
+
+
+
+
+
+
+
+
+
+
+
+仿真：
+roslaunch ur_gazebo ur5e_bringup.launch
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch sim:=true
+roslaunch ur5e_moveit_config moveit_rviz.launch config:=true
+
+
+
+sudo chmod 777 /dev/ttyACM0
+
+
+
+
+
+标定：
+roslaunch easy_handeye myk4a_calibration.launch
+roslaunch easy_handeye myaruco_calibration.launch
+
+sudo ifconfig enp5s0 192.168.56.1 netmask 255.255.255.0
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.56.101
+以上两行命令在同一个终端
+开电
+然后在run中载入文件
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch limited:=true sim:=false
+
+
+roslaunch easy_handeye myhandeye_calibration.launch
+
+
+
+标定结果：
+gedit ~/.ros/easy_handeye/ur5e_k4a_handeyecalibration_eye_on_base.yaml
+
+roslaunch easy_handeye publish.launch eye_on_hand:=false
+
+
+视觉
+仿真：
+
+roslaunch easy_handeye myk4a_calibration.launch
+roslaunch easy_handeye aruco_pose.launch 
+roslaunch ur_gazebo ur5e_bringup.launch
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch sim:=true
+python /home/lin/UR5e/publish_calibration.py
+sudo chmod 777 /dev/ttyACM0
+
+
+实物：
+roslaunch easy_handeye myk4a_calibration.launch
+roslaunch easy_handeye aruco_pose.launch 
+
+sudo ifconfig enp5s0 192.168.56.1 netmask 255.255.255.0
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.56.101
+以上两行命令在同一个终端
+开电
+然后在run中载入文件
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch limited:=true sim:=false
+
+# roslaunch easy_handeye publish.launch eye_on_hand:=false
+python /home/lin/UR5e/publish_calibration.py
+
+
+sudo chmod 777 /dev/ttyACM0
+
+

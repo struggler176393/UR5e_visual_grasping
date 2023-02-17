@@ -1,0 +1,4 @@
+build/
+devel/
+__pycache__/
+waste_code/
