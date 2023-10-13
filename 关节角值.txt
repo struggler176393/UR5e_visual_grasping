@@ -1,0 +1,121 @@
+
+open
+p1:[-0.1195915381060999, -1.1919239324382325, 2.4270058313952845, -3.3735295734801234, -1.731750790272848, -1.2580574194537562]
+0.8s
+close
+p2:[-0.11962014833559209, -1.191879079943039, 1.7863343397723597, -2.130263944665426, -1.5618279615985315, -1.258162800465719]
+0.8s
+p3:[-0.11962014833559209, -1.1919607681087037, 1.1555073896991175, -1.4718886253288765, -1.5618088881122034, -1.258125130330221]
+0.8s
+p4:[-0.11954957643617803, -1.1919009250453492, 0.45309478441347295, -0.9374885124019166, -1.5618251005755823, -1.258216683064596]
+0.8s
+p5:[-0.11956674257387334, -1.1918683809093018, 0.11150962511171514, -1.1555001896670838, -1.358638111745016, -1.2580845991717737]
+0.8s
+p6:[-0.11949378648866826, -1.1919042629054566, 0.11143666902651006, -2.025173326531881, -1.358636204396383, -1.2581217924701136]
+1.2s
+p7:[-0.11955815950502569, -1.191875920896866, -0.23125745356082916, -0.6156986516765137, -0.4870050589190882, -1.2580526510821741]
+2s
+p8:[-0.11955863634218389, -1.1918563407710572, 0.38101369539369756, -2.450367113152975, -1.1800411383258265, -1.2580350081073206]
+2s
+p9:[-0.1195300261126917, -1.191911832695343, 0.3810990492450159, -1.297207997446396, -1.2170818487750452, -1.3169639746295374]
+2s
+open
+回p1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rosbag record -O /home/lin/clothes/towels_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rosbag record -O /home/lin/clothes/t_shirts_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/shirts_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/sweaters_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/jeans_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+

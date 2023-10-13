@@ -1,0 +1,4 @@
+geometry_msgs/Pose[] goal
+float32 scale
+---
+geometry_msgs/Pose current_pose

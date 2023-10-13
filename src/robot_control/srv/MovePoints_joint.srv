@@ -1,0 +1,5 @@
+float64[] goal
+float64 scale
+int64 point_num
+---
+geometry_msgs/Pose current_pose

@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/lin/UR5e_learning2/devel/include/**",
+        "/home/lin/UR5e/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/lin/UR5e/src/aruco_ros-noetic-devel/aruco/include/**",
+        "/home/lin/UR5e/src/aruco_ros-noetic-devel/aruco_ros/include/**",
+        "/home/lin/UR5e/src/Azure_Kinect_ROS_Driver/include/**",
+        "/home/lin/UR5e/src/easy_aruco/include/**",
+        "/home/lin/UR5e/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+        "/home/lin/UR5e_learning2/src/fmauch_universal_robot/ur_kinematics/include/**",
+        "/home/lin/UR5e/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+        "/home/lin/UR5e/src/vision_visp/visp_bridge/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

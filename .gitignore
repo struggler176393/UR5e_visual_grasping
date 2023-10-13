@@ -1,0 +1,8 @@
+build/
+devel/
+src/robot_control/scripts/checkpoint/
+src/robot_control/scripts/gluing_dataset/color/
+src/robot_control/scripts/gluing_dataset/colored_depth/
+src/robot_control/scripts/gluing_dataset/depth/
+src/robot_control/scripts/gluing_dataset/json/
+src/robot_control/scripts/gluing_dataset/mask/

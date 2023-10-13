@@ -1,0 +1,5 @@
+如何根据MovePoints.srv文件：
+geometry_msgs/Pose[] goal
+---
+geometry_msgs/Pose current_pose
+编写python ros的client，向server发送geometry_msgs/Pose[]类型的数据

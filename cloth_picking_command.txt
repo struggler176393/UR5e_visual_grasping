@@ -1,0 +1,75 @@
+实物：
+176393
+笔记本：
+sudo ifconfig eno1 192.168.56.1 netmask 255.255.255.0
+
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.56.101
+以上两行命令在同一个终端
+开电
+然后在run中载入文件
+
+
+
+roslaunch ur5e_moveit_config ur5e_moveit_planning_execution.launch limited:=true sim:=false
+roslaunch ur5e_moveit_config moveit_rviz.launch config:=true
+
+
+
+---------------------------------------------
+有错
+source /home/lin/gripper_ur5/devel/setup.bash
+rospack find ur5_gripper_moveit_config 
+
+roslaunch ur5_gripper_moveit_config demo.launch
+---------------------------------------------
+
+
+
+
+
+
+
+rosrun robot_control move_points_server_joint
+
+
+
+放开串口权限：
+sudo chmod a+rw /dev/ttyUSB0
+启动夹爪节点：
+conda deactivate
+conda deactivate
+rosrun robotiq_2f_gripper_control Robotiq2FGripperRtuNode.py /dev/ttyUSB0
+rosrun robotiq_2f_gripper_control Robotiq2FGripperSimpleController.py
+
+首先要完成这两个命令，先后输入r和c。 r键（reset） 重置夹爪，然后 a键（activate） 激活夹爪，再进行其他操作；
+
+roslaunch azure_kinect_ros_driver driver.launch
+
+
+vscode 运行/home/lin/UR5e/src/robot_control/scripts/move.py
+
+
+
+
+
+
+
+rosbag record -O /home/lin/clothes/towels_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/t_shirts_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/shirts_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/sweaters_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+rosbag record -O /home/lin/clothes/jeans_6_video_10.bag /rgb/image_raw /depth_to_rgb/image_raw /joint_states /tf_static /tf /Robotiq2FGripperRobotInput 
+
+
+
+
+
+
+
+
+
+

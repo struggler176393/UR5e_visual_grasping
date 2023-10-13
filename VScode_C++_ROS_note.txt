@@ -1,0 +1,189 @@
+https://blog.51cto.com/u_15669955/5351437
+
+
+1、建立工作空间，catkin_make
+报错：Unable to find either executable 'empy' or Python module 'em'...  try installing the package 'python3-empy'
+那么使用：catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+2、打开vscode，选择工作空间为主目录
+3、此时编译(catkin_make)快捷键为Ctrl+Shift+B，如果不行，将.vscode文件夹下的tasks.json（没有新建）内容改为如下：
+{
+    "tasks": [
+        {
+            "type": "catkin_make",
+            "args": [
+                "--directory",
+                "/home/lin/UR5e",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "problemMatcher": [
+                "$catkin-gcc"
+            ],
+            "group": "build",
+            "label": "catkin_make: build"
+        }
+    ],
+    "version": "2.0.0"
+}
+
+4、功能包src下新建文件，然后配置 CMakeLists.txt
+C++ 配置格式:
+add_executable(节点名称
+  src/C++源文件名.cpp
+)
+target_link_libraries(节点名称
+  ${catkin_LIBRARIES}
+)
+
+Python 配置格式:
+catkin_install_python(PROGRAMS scripts/自定义文件名.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+5、ctrl + shift + B 编译
+6、source
+7、对功能包内单个C++文件调试，将功能包下的.vscode文件夹下的c_cpp_properties.json文件修改为如下：
+
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/lin/UR5e/devel/include/**",
+                "/home/lin/ws_moveit/devel/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_planners/chomp/chomp_motion_planner/include/**",
+                "/home/lin/ws_moveit/src/geometric_shapes/include/**",
+                "/home/lin/UR5e/src/move_demo/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_planners/chomp/chomp_interface/include/**",
+                "/home/lin/ws_moveit/src/moveit_resources/prbt_ikfast_manipulator_plugin/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_ros/benchmarks/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_plugins/moveit_ros_control_interface/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_ros/move_group/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_ros/occupancy_map_monitor/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_ros/robot_interaction/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_ros/moveit_servo/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_setup_assistant/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_plugins/moveit_simple_controller_manager/include/**",
+                "/home/lin/ws_moveit/src/moveit_visual_tools/include/**",
+                "/home/lin/UR5e/src/new_gluing/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_planners/pilz_industrial_motion_planner/include/**",
+                "/home/lin/ws_moveit/src/moveit/moveit_planners/pilz_industrial_motion_planner_testutils/include/**",
+                "/home/lin/ws_moveit/src/rviz_visual_tools/include/**",
+                "/home/lin/ws_moveit/src/srdfdom/include/**",
+                "/home/lin/UR5e/src/Universal_Robots_ROS_Driver/ur_calibration/include/**",
+                "/home/lin/UR5e/src/fmauch_universal_robot/ur_kinematics/include/**",
+                "/home/lin/UR5e/src/Universal_Robots_ROS_Driver/ur_robot_driver/include/**",
+                "/usr/include/**",
+                "/opt/ros/noetic/include/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+
+        }
+    ],
+    "version": 4
+}
+
+
+
+8、创建 launch 文件
+hello_world_c:功能包
+hello_ros_c，hello_ros_c.py:节点
+name:随意
+<launch>
+    <node pkg="hello_world_c" type="hello_ros_c" name="hello" output="screen" />
+    <node pkg="hello_world_c" type="hello_ros_c.py" name="hello" output="screen" />
+</launch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1、spin()，一直调用callback函数，阻塞了，后面代码不运行
+spinonce()，只调用一次callback，可以在while循环里不断调用，并且运行后面的代码
+
+
+2、类里面的变量通常末尾加下划线
+3、subscribe和service回调函数可以用类
+https://www.ncnynl.com/archives/201701/1283.html
+
+4、在C++中，冒号（:）用于定义成员函数的初始化列表（Initializer List）。
+
+成员函数的初始化列表出现在函数体之前，用于初始化类的成员变量或调用基类的构造函数。它由冒号和一个逗号分隔的成员初始化子（member initializer）列表组成。
+
+以下是一个示例代码，展示了成员函数初始化列表的使用：
+
+cpp
+
+class MyClass {
+private:
+  int x;
+  int y;
+
+public:
+  MyClass(int a, int b) : x(a), y(b) {
+    // 构造函数体
+  }
+};
+
+在上述示例中，构造函数MyClass(int a, int b)的初始化列表部分为: x(a), y(b)。这意味着在对象创建时，成员变量x将被初始化为a，成员变量y将被初始化为b。
+
+通过使用成员函数初始化列表，可以在对象创建时进行成员变量的初始化，而不需要在构造函数体内逐个赋值。这不仅可以提高代码的可读性和效率，还可以确保成员变量在对象创建时就被正确初始化。
+
+
+
+
+5、在C++中，带有波浪线（~）开头的函数定义是析构函数（destructor）。析构函数是一个特殊的成员函数，它在对象被销毁时自动调用，用于清理对象分配的资源和执行必要的清理操作。
+
+
+6、c++类里面的构造函数在类实例化时自动运行，构造函数的名称与类的名称相同，它们没有返回类型，析构函数在对象被销毁时自动调用的，析构函数的名称与类名相同，但前面加上一个波浪号（~）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

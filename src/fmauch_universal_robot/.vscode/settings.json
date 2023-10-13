@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/lin/UR5e_learning2/devel/lib/python3/dist-packages",
+        "/home/lin/UR5e_learning/devel/lib/python3/dist-packages",
+        "/home/lin/UR5e/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/lin/UR5e_learning2/devel/lib/python3/dist-packages",
+        "/home/lin/UR5e_learning/devel/lib/python3/dist-packages",
+        "/home/lin/UR5e/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

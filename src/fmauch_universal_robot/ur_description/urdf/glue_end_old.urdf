@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="glue_end">
+  <link
+    name="glue_end">
+    <inertial>
+      <origin
+        xyz="-5.49446633577752E-18 -2.74763997543637E-34 0.114896184062851"
+        rpy="0 0 0" />
+      <mass
+        value="0.0559831810869702" />
+      <inertia
+        ixx="0.000240656661737966"
+        ixy="-1.92872955559497E-37"
+        ixz="-2.63677170862146E-20"
+        iyy="0.000240656661737966"
+        iyz="-1.8932995061834E-36"
+        izz="1.82050267727283E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur_description/meshes/glue_end/visual/glue_end.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ur_description/meshes/glue_end/collision/glue_end.stl" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
